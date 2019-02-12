@@ -1,0 +1,11 @@
+disabled_rules:
+        - colon
+        - identifier_name
+        - vertical_whitespace
+        - trailing_whitespace
+        - trailing_newline
+        - line_length
+        - file_length
+        - type_name
+        - force_cast
+        - nesting
