@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>876250563166-cgl30g74qnttj95optg72n3s4h5gqasm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.876250563166-cgl30g74qnttj95optg72n3s4h5gqasm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAlPtiXz7E6IKGoDARvZibHS4jJ4I4ogn0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>876250563166</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>nz.maxhuang.CostiMate</string>
+	<key>PROJECT_ID</key>
+	<string>costimate-d4e20</string>
+	<key>STORAGE_BUCKET</key>
+	<string>costimate-d4e20.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:876250563166:ios:14dbfe8853424a1e</string>
+	<key>DATABASE_URL</key>
+	<string>https://costimate-d4e20.firebaseio.com</string>
+	<key>ADMOB_APP_ID</key>
+	<string>ca-app-pub-8632420119716532~8152519049</string>
+</dict>
+</plist>

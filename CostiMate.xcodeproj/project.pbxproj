@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6060B87122166604008AD0A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6060B87022166603008AD0A0 /* GoogleService-Info.plist */; };
 		60838CDB2212D8A500D890DA /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60838CDA2212D8A500D890DA /* ExpenseCell.swift */; };
 		60838CDD2212DC1400D890DA /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60838CDC2212DC1400D890DA /* Expense.swift */; };
 		609F57862202FFDD00D921FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F57852202FFDD00D921FA /* AppDelegate.swift */; };
@@ -15,6 +16,8 @@
 		609F578D2202FFDD00D921FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F578C2202FFDD00D921FA /* Assets.xcassets */; };
 		609F57902202FFDD00D921FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609F578E2202FFDD00D921FA /* LaunchScreen.storyboard */; };
 		609F579B2202FFDE00D921FA /* CostiMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F579A2202FFDE00D921FA /* CostiMateTests.swift */; };
+		B246757CF4990C79E0675BAE /* Pods_CostiMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0C72439245EF602D4DA4B8 /* Pods_CostiMate.framework */; };
+		CCD14556B6D34011687EF5FE /* Pods_CostiMateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9658C7EBA5B61D65ED95F8CA /* Pods_CostiMateTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6060B87022166603008AD0A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		60838CDA2212D8A500D890DA /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
 		60838CDC2212DC1400D890DA /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		609F57822202FFDD00D921FA /* CostiMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CostiMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +44,12 @@
 		609F57962202FFDE00D921FA /* CostiMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CostiMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		609F579A2202FFDE00D921FA /* CostiMateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostiMateTests.swift; sourceTree = "<group>"; };
 		609F579C2202FFDE00D921FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9658C7EBA5B61D65ED95F8CA /* Pods_CostiMateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CostiMateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		995C295A47EA4686C5DD8F75 /* Pods-CostiMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CostiMate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CostiMate/Pods-CostiMate.debug.xcconfig"; sourceTree = "<group>"; };
+		9D78CE16E15B2721C86D0C9D /* Pods-CostiMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CostiMate.release.xcconfig"; path = "Pods/Target Support Files/Pods-CostiMate/Pods-CostiMate.release.xcconfig"; sourceTree = "<group>"; };
+		B042CD038B6A03352EFF5765 /* Pods-CostiMateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CostiMateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CostiMateTests/Pods-CostiMateTests.release.xcconfig"; sourceTree = "<group>"; };
+		B92D7FBEC19C240EB85F2737 /* Pods-CostiMateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CostiMateTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CostiMateTests/Pods-CostiMateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EC0C72439245EF602D4DA4B8 /* Pods_CostiMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CostiMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B246757CF4990C79E0675BAE /* Pods_CostiMate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +65,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCD14556B6D34011687EF5FE /* Pods_CostiMateTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		003D0F74FA112641DFD944BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC0C72439245EF602D4DA4B8 /* Pods_CostiMate.framework */,
+				9658C7EBA5B61D65ED95F8CA /* Pods_CostiMateTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		609F57792202FFDD00D921FA = {
 			isa = PBXGroup;
 			children = (
 				609F57842202FFDD00D921FA /* CostiMate */,
 				609F57992202FFDE00D921FA /* CostiMateTests */,
 				609F57832202FFDD00D921FA /* Products */,
+				B6B26F3EEBDEEA429F4B6698 /* Pods */,
+				003D0F74FA112641DFD944BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +110,7 @@
 				609F578C2202FFDD00D921FA /* Assets.xcassets */,
 				609F578E2202FFDD00D921FA /* LaunchScreen.storyboard */,
 				609F57912202FFDD00D921FA /* Info.plist */,
+				6060B87022166603008AD0A0 /* GoogleService-Info.plist */,
 			);
 			path = CostiMate;
 			sourceTree = "<group>";
@@ -126,6 +150,17 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		B6B26F3EEBDEEA429F4B6698 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				995C295A47EA4686C5DD8F75 /* Pods-CostiMate.debug.xcconfig */,
+				9D78CE16E15B2721C86D0C9D /* Pods-CostiMate.release.xcconfig */,
+				B92D7FBEC19C240EB85F2737 /* Pods-CostiMateTests.debug.xcconfig */,
+				B042CD038B6A03352EFF5765 /* Pods-CostiMateTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,10 +168,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 609F579F2202FFDE00D921FA /* Build configuration list for PBXNativeTarget "CostiMate" */;
 			buildPhases = (
+				CD78C625AB67F7B3522A0580 /* [CP] Check Pods Manifest.lock */,
 				609F577E2202FFDD00D921FA /* Sources */,
 				609F577F2202FFDD00D921FA /* Frameworks */,
 				609F57802202FFDD00D921FA /* Resources */,
 				60DFDB842212BFC200F404C1 /* ShellScript */,
+				D5EB82AC4C592E38A4DB18D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +188,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 609F57A22202FFDE00D921FA /* Build configuration list for PBXNativeTarget "CostiMateTests" */;
 			buildPhases = (
+				DD7DA5B3F247352211110A28 /* [CP] Check Pods Manifest.lock */,
 				609F57922202FFDE00D921FA /* Sources */,
 				609F57932202FFDE00D921FA /* Frameworks */,
 				609F57942202FFDE00D921FA /* Resources */,
@@ -210,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				609F57902202FFDD00D921FA /* LaunchScreen.storyboard in Resources */,
+				6060B87122166604008AD0A0 /* GoogleService-Info.plist in Resources */,
 				609F578D2202FFDD00D921FA /* Assets.xcassets in Resources */,
 				609F578B2202FFDD00D921FA /* Main.storyboard in Resources */,
 			);
@@ -258,6 +297,74 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+		CD78C625AB67F7B3522A0580 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CostiMate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5EB82AC4C592E38A4DB18D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CostiMate/Pods-CostiMate-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CostiMate/Pods-CostiMate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD7DA5B3F247352211110A28 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CostiMateTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -429,6 +536,7 @@
 		};
 		609F57A02202FFDE00D921FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 995C295A47EA4686C5DD8F75 /* Pods-CostiMate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -447,6 +555,7 @@
 		};
 		609F57A12202FFDE00D921FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D78CE16E15B2721C86D0C9D /* Pods-CostiMate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -465,6 +574,7 @@
 		};
 		609F57A32202FFDE00D921FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B92D7FBEC19C240EB85F2737 /* Pods-CostiMateTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -486,6 +596,7 @@
 		};
 		609F57A42202FFDE00D921FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B042CD038B6A03352EFF5765 /* Pods-CostiMateTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
