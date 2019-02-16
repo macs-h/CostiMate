@@ -10,6 +10,7 @@ target 'CostiMate' do
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
   pod 'Firebase/Database'
+  pod 'PopupDialog'
 
   target 'CostiMateTests' do
     inherit! :search_paths

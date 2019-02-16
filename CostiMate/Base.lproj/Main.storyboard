@@ -56,14 +56,33 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e50-xH-3ue">
-                                                            <rect key="frame" x="139" y="11" width="42" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Petrol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e50-xH-3ue" userLabel="Expense">
+                                                            <rect key="frame" x="15" y="11.5" width="45" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awF-p6-N96" userLabel="Frequency">
+                                                            <rect key="frame" x="305" y="11.5" width="55" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyQ-Ut-Vgg" userLabel="Cost">
+                                                            <rect key="frame" x="273" y="11.5" width="32" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="e50-xH-3ue" firstAttribute="centerY" secondItem="moi-W6-bka" secondAttribute="centerY" id="5Lz-bu-yvH"/>
+                                                        <constraint firstItem="awF-p6-N96" firstAttribute="centerY" secondItem="moi-W6-bka" secondAttribute="centerY" id="Fvx-bM-RBg"/>
+                                                        <constraint firstItem="awF-p6-N96" firstAttribute="leading" secondItem="AyQ-Ut-Vgg" secondAttribute="trailing" id="KzJ-8R-pgf"/>
+                                                        <constraint firstItem="e50-xH-3ue" firstAttribute="leading" secondItem="moi-W6-bka" secondAttribute="leadingMargin" id="R33-d5-hLr"/>
+                                                        <constraint firstAttribute="trailing" secondItem="awF-p6-N96" secondAttribute="trailing" constant="15" id="g98-54-0ID"/>
+                                                        <constraint firstItem="AyQ-Ut-Vgg" firstAttribute="centerY" secondItem="moi-W6-bka" secondAttribute="centerY" id="hdh-gd-aFo"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.363486737" green="0.69807726140000004" blue="0.74733787780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
