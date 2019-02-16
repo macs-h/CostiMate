@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+//import FirebaseDatabase
 
 class ViewController: UIViewController {
     
@@ -15,9 +16,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var bannerView: GADBannerView!
     
     var expenses: [Expense] = []
+//    var dbRef: DatabaseReference?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        dbRef = Database.database().reference()
         
 //        bannerView.adSize = kGADAdSizeSmartBannerPortrait
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"

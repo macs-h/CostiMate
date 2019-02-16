@@ -12,9 +12,13 @@ class ExpenseCell: UITableViewCell {
 
     
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var amount: UILabel!
+    @IBOutlet weak var frequency: UILabel!
     
     func setExpense(expense: Expense) {
         label.text = expense.details
+        amount.text = expense.amount
+        frequency.text = expense.frequency
     }
     
 }

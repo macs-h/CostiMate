@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kvu-ip-dJN" userLabel="Title Container">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kvu-ip-dJN" userLabel="Title Container">
                                 <rect key="frame" x="0.0" y="20" width="375" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CostiMate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mc-Tc-Up4">
                                         <rect key="frame" x="119" y="2" width="137" height="56"/>
@@ -33,12 +32,23 @@
                                         <rect key="frame" x="10" y="10" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_add" translatesAutoresizingMaskIntoConstraints="NO" id="XG5-W0-pde">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPR-oo-h2d" userLabel="Add Button">
                                         <rect key="frame" x="325" y="10" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="YEP-Bb-qKr"/>
+                                            <constraint firstAttribute="height" constant="40" id="exH-1c-d0Y"/>
+                                        </constraints>
+                                        <state key="normal" image="icon_add"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.85176429890000005" green="0.26814657050000001" blue="0.16929620409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bPR-oo-h2d" secondAttribute="trailing" constant="10" id="8TD-w7-Fan"/>
+                                    <constraint firstAttribute="trailing" secondItem="bPR-oo-h2d" secondAttribute="trailing" constant="10" id="QhT-H4-iUc"/>
+                                    <constraint firstItem="bPR-oo-h2d" firstAttribute="top" secondItem="kvu-ip-dJN" secondAttribute="top" constant="10" id="chy-ZL-leV"/>
+                                    <constraint firstItem="bPR-oo-h2d" firstAttribute="centerY" secondItem="kvu-ip-dJN" secondAttribute="centerY" id="kEb-RM-74d"/>
+                                    <constraint firstAttribute="bottom" secondItem="bPR-oo-h2d" secondAttribute="bottom" constant="10" id="qtW-TG-lGk"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fwj-u0-ggu" userLabel="Table Container">
                                 <rect key="frame" x="0.0" y="80" width="375" height="467"/>
@@ -86,6 +96,8 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.363486737" green="0.69807726140000004" blue="0.74733787780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
+                                                    <outlet property="amount" destination="AyQ-Ut-Vgg" id="5dP-iT-NgN"/>
+                                                    <outlet property="frequency" destination="awF-p6-N96" id="SWb-NU-aXD"/>
                                                     <outlet property="label" destination="e50-xH-3ue" id="hVt-Ih-pPW"/>
                                                 </connections>
                                             </tableViewCell>
@@ -110,9 +122,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="kvu-ip-dJN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0CS-2N-9dt"/>
                             <constraint firstItem="blm-Zy-99j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FK0-ZG-Wz2"/>
+                            <constraint firstItem="kvu-ip-dJN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eGf-Xu-SB9"/>
                             <constraint firstItem="blm-Zy-99j" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="sa4-Xx-4jI"/>
                             <constraint firstItem="blm-Zy-99j" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tJM-Oa-kN5"/>
+                            <constraint firstItem="kvu-ip-dJN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tc9-rW-1Bf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
