@@ -76,25 +76,24 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.87454568018579126" blue="0.92534667253494263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blm-Zy-99j" userLabel="Ad Container" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.08688218776729216" blue="0.92534667253494263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="W2n-V7-R1N"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ruP-O3-tLZ" userLabel="Result Container">
                                 <rect key="frame" x="0.0" y="547" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.5241722475981917" blue="0.92534667250000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blm-Zy-99j" userLabel="Ad Container" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="608.5" width="375" height="58.5"/>
-                                <color key="backgroundColor" red="0.0" green="0.08688218776729216" blue="0.92534667253494263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="blm-Zy-99j" secondAttribute="height" multiplier="32:5" id="TyE-fg-YFl"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="blm-Zy-99j" secondAttribute="trailing" id="Qoj-1n-tSs"/>
-                            <constraint firstItem="blm-Zy-99j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VLK-rI-NGZ"/>
-                            <constraint firstItem="blm-Zy-99j" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jPs-Fn-sfR"/>
-                            <constraint firstItem="blm-Zy-99j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xNx-lt-5Oo"/>
+                            <constraint firstItem="blm-Zy-99j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FK0-ZG-Wz2"/>
+                            <constraint firstItem="blm-Zy-99j" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="sa4-Xx-4jI"/>
+                            <constraint firstItem="blm-Zy-99j" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tJM-Oa-kN5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
