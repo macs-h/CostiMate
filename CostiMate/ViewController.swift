@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMobileAds
 //import FirebaseDatabase
+import PopupDialog
 
 class ViewController: UIViewController {
     
@@ -50,7 +51,38 @@ class ViewController: UIViewController {
         return tmp
     }
 
-
+    @IBAction func addButton(_ sender: Any) {
+        showCustomDialog()
+    }
+    
+    func showCustomDialog(animated: Bool = true) {
+        // Create a custom view controller
+//        let ratingVC = RatingViewController(nibName: "RatingViewController", bundle: nil)
+        let ratingVC = ExpenseInputViewController(nibName: "ExpenseInputViewController", bundle: nil)
+        // Create the dialog
+        let popup = PopupDialog(viewController: ratingVC,
+                                buttonAlignment: .horizontal,
+                                transitionStyle: .bounceDown,
+                                tapGestureDismissal: true,
+                                panGestureDismissal: false)
+        
+        // Create first button
+        let buttonOne = CancelButton(title: "CANCEL", height: 60) {
+//            self.label.text = "You canceled the rating dialog"
+        }
+        
+        // Create second button
+        let buttonTwo = DefaultButton(title: "RATE", height: 60) {
+//            self.label.text = "You rated \(ratingVC.cosmosStarRating.rating) stars"
+        }
+        
+        // Add buttons to dialog
+        popup.addButtons([buttonOne, buttonTwo])
+        
+        // Present dialog
+        present(popup, animated: animated, completion: nil)
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {

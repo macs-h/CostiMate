@@ -39,6 +39,9 @@
                                             <constraint firstAttribute="height" constant="40" id="exH-1c-d0Y"/>
                                         </constraints>
                                         <state key="normal" image="icon_add"/>
+                                        <connections>
+                                            <action selector="addButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UL6-CJ-aIf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.85176429890000005" green="0.26814657050000001" blue="0.16929620409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

@@ -16,6 +16,8 @@
 		609F578D2202FFDD00D921FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F578C2202FFDD00D921FA /* Assets.xcassets */; };
 		609F57902202FFDD00D921FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609F578E2202FFDD00D921FA /* LaunchScreen.storyboard */; };
 		609F579B2202FFDE00D921FA /* CostiMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F579A2202FFDE00D921FA /* CostiMateTests.swift */; };
+		60A0894F22196FEF00C9C27D /* ExpenseInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A0894D22196FEF00C9C27D /* ExpenseInputViewController.swift */; };
+		60A0895022196FEF00C9C27D /* ExpenseInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60A0894E22196FEF00C9C27D /* ExpenseInputViewController.xib */; };
 		B246757CF4990C79E0675BAE /* Pods_CostiMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0C72439245EF602D4DA4B8 /* Pods_CostiMate.framework */; };
 		CCD14556B6D34011687EF5FE /* Pods_CostiMateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9658C7EBA5B61D65ED95F8CA /* Pods_CostiMateTests.framework */; };
 /* End PBXBuildFile section */
@@ -44,6 +46,8 @@
 		609F57962202FFDE00D921FA /* CostiMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CostiMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		609F579A2202FFDE00D921FA /* CostiMateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostiMateTests.swift; sourceTree = "<group>"; };
 		609F579C2202FFDE00D921FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60A0894D22196FEF00C9C27D /* ExpenseInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseInputViewController.swift; sourceTree = "<group>"; };
+		60A0894E22196FEF00C9C27D /* ExpenseInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseInputViewController.xib; sourceTree = "<group>"; };
 		9658C7EBA5B61D65ED95F8CA /* Pods_CostiMateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CostiMateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		995C295A47EA4686C5DD8F75 /* Pods-CostiMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CostiMate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CostiMate/Pods-CostiMate.debug.xcconfig"; sourceTree = "<group>"; };
 		9D78CE16E15B2721C86D0C9D /* Pods-CostiMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CostiMate.release.xcconfig"; path = "Pods/Target Support Files/Pods-CostiMate/Pods-CostiMate.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				609F57892202FFDD00D921FA /* Main.storyboard */,
+				60A0894E22196FEF00C9C27D /* ExpenseInputViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 				60838CDA2212D8A500D890DA /* ExpenseCell.swift */,
 				609F57852202FFDD00D921FA /* AppDelegate.swift */,
 				609F57872202FFDD00D921FA /* ViewController.swift */,
+				60A0894D22196FEF00C9C27D /* ExpenseInputViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -248,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				609F57902202FFDD00D921FA /* LaunchScreen.storyboard in Resources */,
+				60A0895022196FEF00C9C27D /* ExpenseInputViewController.xib in Resources */,
 				6060B87122166604008AD0A0 /* GoogleService-Info.plist in Resources */,
 				609F578D2202FFDD00D921FA /* Assets.xcassets in Resources */,
 				609F578B2202FFDD00D921FA /* Main.storyboard in Resources */,
@@ -382,6 +389,7 @@
 				60838CDD2212DC1400D890DA /* Expense.swift in Sources */,
 				609F57882202FFDD00D921FA /* ViewController.swift in Sources */,
 				60838CDB2212D8A500D890DA /* ExpenseCell.swift in Sources */,
+				60A0894F22196FEF00C9C27D /* ExpenseInputViewController.swift in Sources */,
 				609F57862202FFDD00D921FA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
