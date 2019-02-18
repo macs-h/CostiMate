@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     var expenses: [Expense] = []
 //    var dbRef: DatabaseReference?
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +29,6 @@ class ViewController: UIViewController {
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
-        
         
         
         expenses = createArray()
@@ -56,31 +56,55 @@ class ViewController: UIViewController {
     }
     
     func showCustomDialog(animated: Bool = true) {
+        
         // Create a custom view controller
-//        let ratingVC = RatingViewController(nibName: "RatingViewController", bundle: nil)
-        let ratingVC = ExpenseInputViewController(nibName: "ExpenseInputViewController", bundle: nil)
+        let expenseInputVC = ExpenseInputViewController(nibName: "ExpenseInputViewController", bundle: nil)
+        
         // Create the dialog
-        let popup = PopupDialog(viewController: ratingVC,
+        let popup = PopupDialog(viewController: expenseInputVC,
                                 buttonAlignment: .horizontal,
-                                transitionStyle: .bounceDown,
+                                transitionStyle: .bounceUp,
                                 tapGestureDismissal: true,
                                 panGestureDismissal: false)
         
         // Create first button
         let buttonOne = CancelButton(title: "CANCEL", height: 60) {
 //            self.label.text = "You canceled the rating dialog"
+//            print("+++ \(expenseInputVC.expenseTextField.text)")
         }
-        
+
         // Create second button
-        let buttonTwo = DefaultButton(title: "RATE", height: 60) {
-//            self.label.text = "You rated \(ratingVC.cosmosStarRating.rating) stars"
+        let buttonTwo = DefaultButton(title: "RATE", height: 60, dismissOnTap: false) {
+            
+            if expenseInputVC.expenseTextField.text == "" {
+                expenseInputVC.expenseErrorLabel.text = "Expense field missing"
+                popup.shake()
+            } else if expenseInputVC.amountTextField.text == "" {
+                expenseInputVC.expenseErrorLabel.text = ""
+                expenseInputVC.amountErrorLabel.text = "Amount field missing"
+                popup.shake()
+            } else {
+                // Clear error message.
+                expenseInputVC.amountErrorLabel.text = ""
+                
+                let e = Expense(details: expenseInputVC.expenseTextField.text!)
+                self.expenses.append(e)
+                self.tableView .reloadData()
+                popup.dismiss(animated: true, completion: nil)
+            }
         }
-        
+
         // Add buttons to dialog
         popup.addButtons([buttonOne, buttonTwo])
         
         // Present dialog
         present(popup, animated: animated, completion: nil)
+        
+        
+    }
+    
+    func validateInput() {
+        print("TAPPED")
     }
     
 }

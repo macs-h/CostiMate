@@ -12,6 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExpenseInputViewController" customModule="CostiMate" customModuleProvider="target">
             <connections>
+                <outlet property="amountErrorLabel" destination="lT3-8a-SxB" id="KDy-6G-Yxz"/>
+                <outlet property="amountTextField" destination="bdd-Dw-Qff" id="R0r-nU-bhi"/>
+                <outlet property="expenseErrorLabel" destination="7fh-bp-b7O" id="daS-R5-pLn"/>
+                <outlet property="expenseTextField" destination="AAL-0z-NOG" id="CmL-9j-DOD"/>
+                <outlet property="frequencyPickerView" destination="KHQ-1g-L5h" id="o3M-Rb-39Z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,8 +28,14 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFh-bO-H92">
                     <rect key="frame" x="0.0" y="0.0" width="390" height="262"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Expense" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAL-0z-NOG" userLabel="Expense Field">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Expense" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAL-0z-NOG" userLabel="Expense Text Field">
                             <rect key="frame" x="80" y="30" width="230" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bdd-Dw-Qff" userLabel="Amount Text Field">
+                            <rect key="frame" x="80" y="90" width="230" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -36,27 +47,42 @@
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="102" id="n3q-uQ-yl8"/>
                             </constraints>
                         </pickerView>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bdd-Dw-Qff" userLabel="Amount Field">
-                            <rect key="frame" x="80" y="90" width="230" height="30"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fh-bp-b7O" userLabel="Expense Error Label">
+                            <rect key="frame" x="0.0" y="2" width="390" height="26"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lT3-8a-SxB" userLabel="Amount Error Label">
+                            <rect key="frame" x="0.0" y="62" width="390" height="26"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="KHQ-1g-L5h" firstAttribute="centerX" secondItem="rFh-bO-H92" secondAttribute="centerX" id="0pV-bQ-x6n"/>
+                        <constraint firstItem="lT3-8a-SxB" firstAttribute="top" secondItem="AAL-0z-NOG" secondAttribute="bottom" constant="2" id="5Kj-ad-ctG"/>
                         <constraint firstItem="AAL-0z-NOG" firstAttribute="centerX" secondItem="rFh-bO-H92" secondAttribute="centerX" id="7Gd-mG-dmv"/>
                         <constraint firstItem="bdd-Dw-Qff" firstAttribute="leading" secondItem="rFh-bO-H92" secondAttribute="leading" constant="80" id="7Wr-eI-xIl"/>
                         <constraint firstAttribute="trailing" secondItem="AAL-0z-NOG" secondAttribute="trailing" constant="80" id="BUl-Of-hwj"/>
+                        <constraint firstItem="lT3-8a-SxB" firstAttribute="leading" secondItem="rFh-bO-H92" secondAttribute="leading" id="CS1-sI-6q8"/>
                         <constraint firstAttribute="trailing" secondItem="bdd-Dw-Qff" secondAttribute="trailing" constant="80" id="Dlg-NA-BMf"/>
                         <constraint firstItem="AAL-0z-NOG" firstAttribute="top" secondItem="rFh-bO-H92" secondAttribute="top" constant="30" id="Hw5-W4-0Ow"/>
+                        <constraint firstItem="7fh-bp-b7O" firstAttribute="top" secondItem="rFh-bO-H92" secondAttribute="top" constant="2" id="KoH-My-v67"/>
+                        <constraint firstItem="7fh-bp-b7O" firstAttribute="centerX" secondItem="rFh-bO-H92" secondAttribute="centerX" id="Vj6-db-A5g"/>
                         <constraint firstAttribute="width" secondItem="rFh-bO-H92" secondAttribute="height" multiplier="195:131" id="Vrg-sz-mpH"/>
+                        <constraint firstAttribute="trailing" secondItem="lT3-8a-SxB" secondAttribute="trailing" id="a3J-kY-bDi"/>
                         <constraint firstItem="AAL-0z-NOG" firstAttribute="leading" secondItem="rFh-bO-H92" secondAttribute="leading" constant="80" id="gMS-PM-jVQ"/>
                         <constraint firstItem="KHQ-1g-L5h" firstAttribute="leading" secondItem="rFh-bO-H92" secondAttribute="leading" constant="80" id="gdM-as-TPh"/>
+                        <constraint firstAttribute="trailing" secondItem="7fh-bp-b7O" secondAttribute="trailing" id="ha1-Uy-6MY"/>
+                        <constraint firstItem="AAL-0z-NOG" firstAttribute="top" secondItem="7fh-bp-b7O" secondAttribute="bottom" constant="2" id="jCi-4T-bG3"/>
                         <constraint firstItem="bdd-Dw-Qff" firstAttribute="top" secondItem="AAL-0z-NOG" secondAttribute="bottom" constant="30" id="kqa-0w-Qcc"/>
+                        <constraint firstItem="bdd-Dw-Qff" firstAttribute="top" secondItem="lT3-8a-SxB" secondAttribute="bottom" constant="2" id="mT6-m5-2w9"/>
                         <constraint firstAttribute="trailing" secondItem="KHQ-1g-L5h" secondAttribute="trailing" constant="80" id="mrz-Lx-cwn"/>
                         <constraint firstItem="bdd-Dw-Qff" firstAttribute="centerX" secondItem="rFh-bO-H92" secondAttribute="centerX" id="pSX-IU-YHv"/>
+                        <constraint firstItem="7fh-bp-b7O" firstAttribute="leading" secondItem="rFh-bO-H92" secondAttribute="leading" id="qFe-Wk-YzI"/>
                         <constraint firstItem="KHQ-1g-L5h" firstAttribute="top" secondItem="bdd-Dw-Qff" secondAttribute="bottom" constant="20" id="zaz-H6-CiH"/>
                     </constraints>
                 </view>
