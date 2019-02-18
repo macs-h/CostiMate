@@ -8,18 +8,24 @@
 
 import Foundation
 
+enum ExpenseFrequency: String {
+    case day
+    case week
+    case fortnight
+    case month
+    case year
+}
+
 class Expense {
+    
     var details: String
     var amount: String
     var frequency: String
     
-    init(_ details: String, _ amount: String, _ frequency: String) {
+    init(_ details: String, _ amount: String, _ frequency: ExpenseFrequency) {
         self.details = details
-        self.amount = "$" + amount
-        self.frequency = "/" + frequency
+        self.amount = amount
+        self.frequency = " / " + frequency.rawValue
     }
     
-    convenience init(details: String) {
-        self.init(details, "80", "week")
-    }
 }

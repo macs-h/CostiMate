@@ -25,7 +25,6 @@ class ViewController: UIViewController {
         
 //        dbRef = Database.database().reference()
         
-//        bannerView.adSize = kGADAdSizeSmartBannerPortrait
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
@@ -40,13 +39,9 @@ class ViewController: UIViewController {
     func createArray() -> [Expense] {
         var tmp = [Expense]()
         
-        let exp1 = Expense(details: "exp1")
-        let exp2 = Expense(details: "exp2")
-        let exp3 = Expense(details: "exp3")
-        
+        let exp1 = Expense("Placeholder expense", "$35.00", .week)
+
         tmp.append(exp1)
-        tmp.append(exp2)
-        tmp.append(exp3)
         
         return tmp
     }
@@ -68,27 +63,24 @@ class ViewController: UIViewController {
                                 panGestureDismissal: false)
         
         // Create first button
-        let buttonOne = CancelButton(title: "CANCEL", height: 60) {
-//            self.label.text = "You canceled the rating dialog"
-//            print("+++ \(expenseInputVC.expenseTextField.text)")
-        }
-
+        let buttonOne = CancelButton(title: "CANCEL", height: 60, action: nil)
+        
+        
         // Create second button
-        let buttonTwo = DefaultButton(title: "RATE", height: 60, dismissOnTap: false) {
+        let buttonTwo = DefaultButton(title: "ADD EXPENSE", height: 60, dismissOnTap: false) {
             
             if expenseInputVC.expenseTextField.text == "" {
-                expenseInputVC.expenseErrorLabel.text = "Expense field missing"
+                expenseInputVC.errorLabel.text = "Expense field missing"
                 popup.shake()
             } else if expenseInputVC.amountTextField.text == "" {
-                expenseInputVC.expenseErrorLabel.text = ""
-                expenseInputVC.amountErrorLabel.text = "Amount field missing"
+                expenseInputVC.errorLabel.text = "Amount field missing"
                 popup.shake()
             } else {
-                // Clear error message.
-                expenseInputVC.amountErrorLabel.text = ""
-                
-                let e = Expense(details: expenseInputVC.expenseTextField.text!)
-                self.expenses.append(e)
+                let expense = expenseInputVC.expenseTextField.text!
+                let amount = expenseInputVC.amountTextField.text!
+                let freq = expenseInputVC.getPickerData()
+//                let e = Expense(expenseInputVC.expenseTextField.text!, "", .week)
+                self.expenses.append(Expense(expense, amount, freq))
                 self.tableView .reloadData()
                 popup.dismiss(animated: true, completion: nil)
             }
@@ -99,12 +91,6 @@ class ViewController: UIViewController {
         
         // Present dialog
         present(popup, animated: animated, completion: nil)
-        
-        
-    }
-    
-    func validateInput() {
-        print("TAPPED")
     }
     
 }

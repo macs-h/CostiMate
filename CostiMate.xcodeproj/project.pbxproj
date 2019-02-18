@@ -132,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				60838CDC2212DC1400D890DA /* Expense.swift */,
+				60838CDA2212D8A500D890DA /* ExpenseCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -148,7 +149,6 @@
 		60DFDB892212C92800F404C1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				60838CDA2212D8A500D890DA /* ExpenseCell.swift */,
 				609F57852202FFDD00D921FA /* AppDelegate.swift */,
 				609F57872202FFDD00D921FA /* ViewController.swift */,
 				60A0894D22196FEF00C9C27D /* ExpenseInputViewController.swift */,
@@ -178,7 +178,6 @@
 				609F577E2202FFDD00D921FA /* Sources */,
 				609F577F2202FFDD00D921FA /* Frameworks */,
 				609F57802202FFDD00D921FA /* Resources */,
-				60DFDB842212BFC200F404C1 /* ShellScript */,
 				D5EB82AC4C592E38A4DB18D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -287,23 +286,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		60DFDB842212BFC200F404C1 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
 		};
 		CD78C625AB67F7B3522A0580 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
