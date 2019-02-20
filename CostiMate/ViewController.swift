@@ -8,8 +8,8 @@
 
 import UIKit
 import GoogleMobileAds
-//import FirebaseDatabase
 import PopupDialog
+import Firebase
 
 class ViewController: UIViewController {
     
@@ -17,24 +17,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var bannerView: GADBannerView!
     
     var expenses: [Expense] = []
-//    var dbRef: DatabaseReference?
+    var dbRef: DatabaseReference!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        dbRef = Database.database().reference()
+        dbRef = Database.database().reference()
         
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
-        
         
         expenses = createArray()
         
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
     
     func createArray() -> [Expense] {
         var tmp = [Expense]()
@@ -46,9 +46,11 @@ class ViewController: UIViewController {
         return tmp
     }
 
+    
     @IBAction func addButton(_ sender: Any) {
         showCustomDialog()
     }
+    
     
     func showCustomDialog(animated: Bool = true) {
         
@@ -69,21 +71,13 @@ class ViewController: UIViewController {
         // Create second button
         let buttonTwo = DefaultButton(title: "ADD EXPENSE", height: 60, dismissOnTap: false) {
             
-            if expenseInputVC.expenseTextField.text == "" {
-                expenseInputVC.errorLabel.text = "Expense field missing"
-                popup.shake()
-            } else if expenseInputVC.amountTextField.text == "" {
-                expenseInputVC.errorLabel.text = "Amount field missing"
-                popup.shake()
-            } else {
-                let expense = expenseInputVC.expenseTextField.text!
-                let amount = expenseInputVC.amountTextField.text!
-                let freq = expenseInputVC.getPickerData()
-//                let e = Expense(expenseInputVC.expenseTextField.text!, "", .week)
-                self.expenses.append(Expense(expense, amount, freq))
-                self.tableView .reloadData()
+            if self.validInput(for: expenseInputVC, with: popup) {
+                self.setExpense(for: expenseInputVC)
                 popup.dismiss(animated: true, completion: nil)
+            } else {
+                popup.shake()
             }
+            
         }
 
         // Add buttons to dialog
@@ -93,7 +87,41 @@ class ViewController: UIViewController {
         present(popup, animated: animated, completion: nil)
     }
     
+    
+    func validInput(for vc: ExpenseInputViewController, with popup: PopupDialog) -> Bool {
+        if vc.expenseTextField.text == "" {
+            vc.errorLabel.text = "Expense field missing"
+            return false
+        }
+        if vc.amountTextField.text == "" {
+            vc.errorLabel.text = "Amount field missing"
+            return false
+        }
+        return true
+    }
+    
+    func setExpense(for vc: ExpenseInputViewController) {
+        let expense = vc.expenseTextField.text!
+        let amount = vc.amountTextField.text!
+        let freq = vc.getPickerData()
+        
+        self.expenses.append(Expense(expense, amount, freq))
+        self.tableView .reloadData()
+        self.addExpense(expense, amount, freq.rawValue)
+    }
+    
+    
+    func addExpense(_ expense: String, _ amount: String, _ freq: String) {
+        self.dbRef
+            .child("users")
+            .child("user1")
+            .child("expenses")
+            .child("exp2")
+            .setValue(["exp":expense, "cost":amount, "freq":freq])
+    }
+    
 }
+
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
