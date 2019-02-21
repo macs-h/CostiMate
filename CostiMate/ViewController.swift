@@ -17,31 +17,53 @@ class ViewController: UIViewController {
     @IBOutlet weak var bannerView: GADBannerView!
     
     var expenses: [Expense] = []
-    var dbRef: DatabaseReference!
-
+    var dbRef: DatabaseReference?
+    var dbHandle: DatabaseHandle?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        dbRef = Database.database().reference()
         
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         
-        expenses = createArray()
-        
         tableView.delegate = self
         tableView.dataSource = self
+        
+        dbRef = Database.database().reference()
+        dbHandle = dbRef?.child("users").child("user1").child("expenses").observe(.childAdded, with: { (snapshot) in
+            if let dbEntry = snapshot.value as? NSDictionary {
+                let expense = snapshot.key
+                let amount = dbEntry["amount"] as? String ?? ""
+                let freq = dbEntry["freq"] as? String ?? ""
+                
+                if (amount != "" && freq != "") {
+                    self.expenses.append( Expense(expense, amount, freq) )
+                }
+                print(expense, amount, freq)
+            }
+            self.tableView.reloadData()
+        })
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // populate table with db entries
+//        expenses = createArray()
     }
     
     
     func createArray() -> [Expense] {
         var tmp = [Expense]()
         
-        let exp1 = Expense("Placeholder expense", "$35.00", .week)
-
-        tmp.append(exp1)
+//        let exp1 = Expense("Placeholder expense", "$35.00", .week)
+//
+//        tmp.append(exp1)
         
         return tmp
     }
@@ -71,7 +93,7 @@ class ViewController: UIViewController {
         // Create second button
         let buttonTwo = DefaultButton(title: "ADD EXPENSE", height: 60, dismissOnTap: false) {
             
-            if self.validInput(for: expenseInputVC, with: popup) {
+            if self.isValidInput(for: expenseInputVC, with: popup) {
                 self.setExpense(for: expenseInputVC)
                 popup.dismiss(animated: true, completion: nil)
             } else {
@@ -88,7 +110,7 @@ class ViewController: UIViewController {
     }
     
     
-    func validInput(for vc: ExpenseInputViewController, with popup: PopupDialog) -> Bool {
+    func isValidInput(for vc: ExpenseInputViewController, with popup: PopupDialog) -> Bool {
         if vc.expenseTextField.text == "" {
             vc.errorLabel.text = "Expense field missing"
             return false
@@ -105,19 +127,19 @@ class ViewController: UIViewController {
         let amount = vc.amountTextField.text!
         let freq = vc.getPickerData()
         
-        self.expenses.append(Expense(expense, amount, freq))
-        self.tableView .reloadData()
-        self.addExpense(expense, amount, freq.rawValue)
+//        self.expenses.append(Expense(expense, amount, freq))
+//        self.tableView .reloadData()
+        self.addExpense(expense, amount, freq)
     }
     
     
     func addExpense(_ expense: String, _ amount: String, _ freq: String) {
-        self.dbRef
+        self.dbRef?
             .child("users")
             .child("user1")
             .child("expenses")
-            .child("exp2")
-            .setValue(["exp":expense, "cost":amount, "freq":freq])
+            .child(expense)
+            .setValue(["amount":amount, "freq":freq])
     }
     
 }

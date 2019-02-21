@@ -15,11 +15,7 @@ class ExpenseInputViewController: UIViewController {
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var frequencyPickerView: UIPickerView!
     
-    let pickerData: [String] = [ ExpenseFrequency.day.rawValue,
-                                 ExpenseFrequency.week.rawValue,
-                                 ExpenseFrequency.fortnight.rawValue,
-                                 ExpenseFrequency.month.rawValue,
-                                 ExpenseFrequency.year.rawValue]
+    let pickerData: [String] = ["Daily", "Weekly", "Fortnightly", "Monthly", "Quarterly", "Yearly"]
     
     var selectedPickerData: String = ""
     
@@ -53,20 +49,8 @@ class ExpenseInputViewController: UIViewController {
         }
     }
     
-    func getPickerData() -> ExpenseFrequency {
-        var freq: ExpenseFrequency = .day
-        switch selectedPickerData {
-            case "day": freq = .day
-            case "week": freq = .week
-            case "fortnight": freq = .fortnight
-            case "month": freq = .month
-            case "year": freq = .year
-            default:
-                freq = .day
-            
-        }
-        
-        return freq
+    func getPickerData() -> String {
+        return selectedPickerData
     }
     
 }
