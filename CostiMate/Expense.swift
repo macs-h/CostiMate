@@ -10,14 +10,14 @@ import Foundation
 
 class Expense {
     
-    var details: String
+    var expense: String
     var amount: String
     var frequency: String
     
-    init(_ details: String, _ amount: String, _ frequency: String) {
-        self.details = details
+    init(_ expense: String, _ amount: String, _ frequency: String) {
+        self.expense = expense
         self.amount = amount
-        self.frequency = " / " + frequency
+        self.frequency = frequency
     }
     
 }

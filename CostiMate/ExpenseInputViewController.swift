@@ -15,7 +15,12 @@ class ExpenseInputViewController: UIViewController {
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var frequencyPickerView: UIPickerView!
     
-    let pickerData: [String] = ["Daily", "Weekly", "Fortnightly", "Monthly", "Quarterly", "Yearly"]
+    let pickerData: [String] = ["Daily",
+                                "Weekly",
+//                                "Fortnightly",
+                                "Monthly",
+//                                "Quarterly",
+                                "Yearly"]
     
     var selectedPickerData: String = ""
     

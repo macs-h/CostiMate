@@ -10,18 +10,30 @@ import UIKit
 import GoogleMobileAds
 import PopupDialog
 import Firebase
+import LoadingPlaceholderView
+
+//class TableContainerView: UIView {
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.coverableCellsIdentifiers = ["ExpenseCell", "ExpenseCell2", "ExpenseCell3"]
+        }
+    }
+
     @IBOutlet weak var bannerView: GADBannerView!
+    @IBOutlet weak var tableContainer: UIView!
     
     var expenses: [Expense] = []
     var dbRef: DatabaseReference?
-    var dbHandle: DatabaseHandle?
+//    var dbHandle: DatabaseHandle?
+    private var loadingPlaceholderView = LoadingPlaceholderView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        loadingPlaceholderView.cover(tableContainer)
         
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
@@ -31,41 +43,68 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         
         dbRef = Database.database().reference()
-        dbHandle = dbRef?.child("users").child("user1").child("expenses").observe(.childAdded, with: { (snapshot) in
+        populateTable()
+        
+    }
+    
+    func populateTable() {
+        dbRef?.child("users").child("user1").observeSingleEvent(of: .value, with: { (snapshot) in
             if let dbEntry = snapshot.value as? NSDictionary {
-                let expense = snapshot.key
-                let amount = dbEntry["amount"] as? String ?? ""
-                let freq = dbEntry["freq"] as? String ?? ""
-                
-                if (amount != "" && freq != "") {
-                    self.expenses.append( Expense(expense, amount, freq) )
+                if let expenseDict = dbEntry["expenses"] as? NSDictionary {
+                    
+                    for (key, value) in expenseDict {
+                        let expense = key as? String ?? ""
+                        var amount: String = ""
+                        var freq: String = ""
+                        
+                        for (key, value) in value as! NSDictionary {
+                            if key as? String == "amount" {
+                                amount = value as? String ?? ""
+                            } else if key as? String == "freq" {
+                                freq = value as? String ?? ""
+                            }
+                        }
+                        
+                        self.expenses.append( Expense(expense, amount, freq) )
+                    }
                 }
-                print(expense, amount, freq)
             }
+            self.loadingPlaceholderView.uncover()
             self.tableView.reloadData()
         })
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        // populate table with db entries
-//        expenses = createArray()
     }
     
     
-    func createArray() -> [Expense] {
-        var tmp = [Expense]()
-        
-//        let exp1 = Expense("Placeholder expense", "$35.00", .week)
+//    func createArray() -> [Expense] {
+//        var tmp = [Expense]()
 //
-//        tmp.append(exp1)
+////        let exp1 = Expense("Placeholder expense", "$35.00", .week)
+////
+////        tmp.append(exp1)
+//
+//        return tmp
+//    }
+    
+    func addToOnlineDB(_ e: Expense) {
+        self.dbRef?
+            .child("users")
+            .child("user1")
+            .child("expenses")
+            .child(e.expense)
+            .setValue(["amount":e.amount, "freq":e.frequency])
+    }
+    
+    func deleteFromOnlineDB(_ e: Expense) {
+        self.dbRef?
+            .child("users")
+            .child("user1")
+            .child("expenses")
+            .child(e.expense)
+            .removeValue()
+    }
+    
+    func addExpense(_ expense: String, _ amount: String, _ freq: String) {
         
-        return tmp
     }
 
     
@@ -133,14 +172,7 @@ class ViewController: UIViewController {
     }
     
     
-    func addExpense(_ expense: String, _ amount: String, _ freq: String) {
-        self.dbRef?
-            .child("users")
-            .child("user1")
-            .child("expenses")
-            .child(expense)
-            .setValue(["amount":amount, "freq":freq])
-    }
+   
     
 }
 
@@ -155,8 +187,21 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExpenseCell") as! ExpenseCell
         
-        cell.setExpense(expense: expense)
+        cell.setExpense(expense)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            // delete item at indexPath
+            let itemRemoved = self.expenses.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            self.deleteFromOnlineDB(itemRemoved)
+            print(self.expenses)
+        }
+        
+        return [delete]
+        
     }
 }

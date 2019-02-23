@@ -57,6 +57,7 @@ PODS:
   - GoogleUtilities/UserDefaults (5.3.7):
     - GoogleUtilities/Logger
   - leveldb-library (1.20)
+  - LoadingPlaceholderView (0.0.2)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -70,6 +71,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Google-Mobile-Ads-SDK
+  - LoadingPlaceholderView
   - PopupDialog
 
 SPEC REPOS:
@@ -85,6 +87,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleUtilities
     - leveldb-library
+    - LoadingPlaceholderView
     - nanopb
     - PopupDialog
 
@@ -100,9 +103,10 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 621f3bc6211d5ba548debe01fafad30cf5ab6859
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  LoadingPlaceholderView: e913f5ae2673612d405ce395acca7cedb1bfaa81
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   PopupDialog: f4bb461bf70ff422be0b56656566424ee9273080
 
-PODFILE CHECKSUM: 9b943eb8409efff17e86d44934e08dc10bf3d7d1
+PODFILE CHECKSUM: 111aacd3ed04d1ead8abd5a9a8c8c728f713f446
 
 COCOAPODS: 1.5.3
